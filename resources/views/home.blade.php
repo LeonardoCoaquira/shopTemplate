@@ -2,6 +2,18 @@
 
 @section('content')
 <div class="container">
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 0.3em;
+            background-color: #F5F5F5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #000000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #555555;
+        }
+    </style>
     <div class="row align-items-start">
         <div class="col-2 mb-4">
             <div class="card">
@@ -25,7 +37,7 @@
                         <div class="d-flex align-items-center" style="height:10em;overflow: hidden;text-align: center">
                             <img src="products/photos/{{$product->routePhoto}}" class="card-img-top" alt="...">
                         </div>
-                        <div class="card-body" style="height:8em;overflow-y:auto ;text-align: center;">
+                        <div class="card-body custom-scrollbar" style="height:8em;overflow-y:auto ;text-align: center;">
                             <h5 class="card-title">{{$product->name}}</h5>
                             <p class="card-text">{{$product->description}}</p>
                         </div>

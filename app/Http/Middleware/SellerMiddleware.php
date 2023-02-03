@@ -4,9 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class AdminMiddleware
+class SellerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -17,7 +16,7 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (auth()->User()->Role->name == 'admin'){
+        if (auth()->User()->Role->name == 'seller'){
             return $next($request);
         } else {
             return redirect('/home');
