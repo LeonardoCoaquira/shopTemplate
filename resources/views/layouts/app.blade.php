@@ -61,10 +61,10 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     
-                                    @if (auth()->user()->Role->name == 'visitor')
-                                        <a class="dropdown-item" href="{{ route('products') }}"
+                                    @if (auth()->user()->Role->name == 'admin')
+                                        <a class="dropdown-item" href="{{ route('admin') }}"
                                         onclick="">
-                                        {{ __('My Products') }}
+                                        {{ __('DashBoard') }}
                                         </a>
                                     @endif
 

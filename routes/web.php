@@ -25,10 +25,7 @@ Route::get('/products/photos/{route}',[App\Http\Controllers\ProductController::c
 Route::post('/deleteProduct', [App\Http\Controllers\ProductController::class, 'destroy'])->name('deleteProduct');
 Route::get('/icons/{route}',[App\Http\Controllers\HomeController::class, 'showIcon']);
 Route::post('/like', 'LikeController@store');
-Route::get('prueba',function()
-{
-    return "Hola visitante";
-})->middleware('admin');
+Route::get('/admin',[App\Http\Controllers\AdminController::class, 'index'])->name('admin')->middleware(['auth','admin']);
 Route::get('no-admin',function()
 {
     return "No admin";
