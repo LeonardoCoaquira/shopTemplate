@@ -16,25 +16,24 @@
         </div>
         <div class="col-10">
             <div class="row row-cols-auto">
-            @foreach($products as $product)
-                <div class="col">
-                    <div class="card" style="width: 10rem;margin-bottom:1em">
-                        <div class="card-header">
-                            {{$product->User->name}}
-                        </div>
-                        <div class="d-flex align-items-center" style="height:10em;overflow: hidden;text-align: center">
-                            <img src="products/photos/{{$product->routePhoto}}" class="card-img-top" alt="...">
-                        </div>
-                        <div class="card-body" style="height:8em;overflow-y:auto ;text-align: center;">
-                            <h5 class="card-title">{{$product->name}}</h5>
-                            <p class="card-text">{{$product->description}}</p>
-                        </div>
-                        <div class="card-footer text-muted">
-                            {{$product->created_at->diffForHumans()}}
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Created</th>
+                        </tr>
+                    </thead>
+                    @foreach($users as $user)
+                        <tbody>
+                        <tr>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->email}}</td>
+                            <td>{{$user->created_at}}</td>
+                        </tr>
+                        </tbody>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>
